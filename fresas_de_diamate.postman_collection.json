@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "3b9c920f-689b-4981-ae53-ad0afa30d63c",
+		"name": "fresas_de_diamate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13922759"
+	},
+	"item": [
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"emma\",\r\n  \"password\": \"contrasena123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/auth/signin",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registrar_usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"cliente3\",\r\n  \"email\": \"cliente3@gmail.com\",\r\n  \"password\": \"contrasena123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/auth/signup",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cerrar_sesion_usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8080/api/signout",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"signout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pedidos",
+			"item": [
+				{
+					"name": "registrar_pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"clienteId\": 2,\r\n  \"fechaCreacion\": \"2023-05-22\",\r\n  \"fechaEntrega\": \"2023-05-25\",\r\n  \"estado\": \"Pendiente\",\r\n  \"detalles\": [\r\n    {\r\n      \"productoID\": 1,\r\n      \"cantidad\": 9\r\n    },\r\n    {\r\n      \"productoID\": 1,\r\n      \"cantidad\": 10\r\n    },\r\n    {\r\n      \"productoID\": 1,\r\n      \"cantidad\": 6\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/pedidos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener_por_id_cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8080/pedidos/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtener_todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8080/pedidos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar_pedido_por_id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8080/pedidos/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "test_relaciones_json",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Emma\",\r\n    \"lastName\": \"Chido\",\r\n    \"books\": [\r\n        {\r\n            \"name\": \"Book 1\",\r\n            \"numPages\": 200,\r\n            \"edition\": 1\r\n        },\r\n        {\r\n            \"name\": \"Book 2\",\r\n            \"numPages\": 150,\r\n            \"edition\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8080/autor/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"autor",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "productos",
+			"item": [
+				{
+					"name": "obtener_todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8080/productos/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"productos",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "127.0.0.1:8080/productos/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/productos/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8080/productos/model/ABC123",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8080/productos/model/ABC123",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"model",
+						"ABC123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8080/productos/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"modelo\": \"model1\",\r\n  \"cod_proveedor\": \"PROV1\",\r\n  \"consecutivo_jic\": \"JIC1\",\r\n  \"descripcion\": \"producto1\",\r\n  \"numero_pizas\": 7,\r\n  \"marca\": \"Marca1\",\r\n  \"tipo_fresa\": \"Tipo1\",\r\n  \"medida_cabeza_long_punta\": \"NPI\",\r\n  \"medida_total\": \"M1\",\r\n  \"precio\": 9.99,\r\n  \"descuento\": 0.5,\r\n  \"imagen\": \"ruta/imagen.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/productos/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8080/productos/2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"modelo\": \"ABC1234\",\r\n  \"cod_proveedor\": \"PROV456\",\r\n  \"consecutivo_jic\": \"JIC10\",\r\n  \"descripcion\": \"Producto Chido\",\r\n  \"numero_pizas\": 10,\r\n  \"marca\": \"Marca del producto\",\r\n  \"tipo_fresa\": \"Tipo3\",\r\n  \"medida_cabeza_long_punta\": \"Medida de cabeza, longitud y punta\",\r\n  \"medida_total\": \"Medida total del producto\",\r\n  \"precio\": 9.99,\r\n  \"descuento\": 0.5,\r\n  \"imagen\": \"ruta/imagen.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8080/productos/2",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
